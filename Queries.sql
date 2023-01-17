@@ -1,4 +1,4 @@
-/*1- write a sql to get all the orders where customers name has "a" as second character and "d" as fourth character (58 rows)*/
+/*1- write a sql to get all the orders where customers name has "a" as second character and "d" as fourth character*/
 
 SELECT 
     customer_name
@@ -24,7 +24,7 @@ FROM
 WHERE
     order_Date BETWEEN '01-12-2020' AND '31-12-2020';
     
-/*3- write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020 (944 rows)*/
+/*3- write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020*/
 
 SELECT 
     *
@@ -34,7 +34,7 @@ WHERE
     ship_mode NOT IN ('Standard Class' , 'First Class')
         AND ship_date > '30-11-2020';
 
-/*4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" (9815 rows)*/
+/*4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" */
 
 SELECT 
     customer_name
@@ -43,7 +43,7 @@ FROM
 WHERE
     customer_name NOT LIKE 'A%n'
 
-/*5- write a query to get all the orders where profit is negative (1871 rows)*/
+/*5- write a query to get all the orders where profit is negative */
 
 SELECT 
     *

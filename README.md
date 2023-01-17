@@ -76,7 +76,7 @@ WHERE
 
   </details>
 
-### 5- write a query to get all the orders where profit is negative
+### 5. write a query to get all the orders where profit is negative
 
 <details><summary>
 View Answer
@@ -91,7 +91,7 @@ WHERE
 
 </details>
   
-### 6- write a query to get all the orders where either quantity is less than 3 or profit is 0
+### 6. write a query to get all the orders where either quantity is less than 3 or profit is 0
 
 <details><summary>
 View Answer
@@ -104,4 +104,19 @@ FROM
 WHERE
     quantity < 3 OR profit = 0;
                 
+</details>
+  
+### 7. your manager handles the sales for South region and he wants you to create a report of all the orders in his region where some discount is provided to the customers
+
+<details><summary>
+View Answer
+</summary>
+  
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    region = 'South' AND discount > 0; 
+  
 </details>

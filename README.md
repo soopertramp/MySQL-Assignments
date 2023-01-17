@@ -59,3 +59,19 @@ WHERE
         AND ship_date > '30-11-2020';  
  
 </details>
+
+  
+### 4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" 
+
+<details><summary>
+View Answer
+</summary>
+  
+SELECT 
+    customer_name
+FROM
+    orders
+WHERE
+    customer_name NOT LIKE 'A%n'
+
+  </details>

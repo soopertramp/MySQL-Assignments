@@ -28,3 +28,18 @@ WHERE
     customer_name LIKE '_a_d%';
 
 </details>
+
+### /*2- write a sql to get all the orders placed in the month of dec 2020 (352 rows)*/
+  
+<details><summary>
+View Answer
+</summary>
+  
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    order_Date BETWEEN '01-12-2020' AND '31-12-2020';
+  
+</details>

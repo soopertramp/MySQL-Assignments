@@ -121,7 +121,7 @@ WHERE
   
 </details>
 
-### 8- write a query to find top 5 orders with highest sales in furniture category
+### 8. write a query to find top 5 orders with highest sales in furniture category
 
 <details><summary>
 View Answer
@@ -138,7 +138,7 @@ LIMIT 5;
  
 </details>
   
-### 9- write a query to find all the records in technology and furniture category for the orders placed in the year 2020 only
+### 9. write a query to find all the records in technology and furniture category for the orders placed in the year 2020 only
 
 <details><summary>
 View Answer
@@ -153,3 +153,21 @@ WHERE
         AND order_date BETWEEN '01-01-2020' AND '31-12-2020';
 
 </details>
+  
+### 10. write a query to find all the orders where order date is in year 2020 but ship date is in 2021
+
+<details><summary>
+View Answer
+</summary>
+  
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    order_Date BETWEEN '01-01-2020' AND '31-12-2020'
+        AND ship_date > '01-01-2021';
+  
+
+</details>
+  

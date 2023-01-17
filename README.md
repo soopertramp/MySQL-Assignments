@@ -137,3 +137,19 @@ order by sales desc
 LIMIT 5;
  
 </details>
+  
+### 9- write a query to find all the records in technology and furniture category for the orders placed in the year 2020 only
+
+<details><summary>
+View Answer
+</summary>  
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    category IN ('Technology' , 'Furniture')
+        AND order_date BETWEEN '01-01-2020' AND '31-12-2020';
+
+</details>

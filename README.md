@@ -29,7 +29,7 @@ WHERE
 
 </details>
 
-### 2- write a sql to get all the orders placed in the month of dec 2020
+### 2. write a sql to get all the orders placed in the month of dec 2020
   
 <details><summary>
 View Answer
@@ -44,7 +44,7 @@ WHERE
   
 </details>
 
-### 3- write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020 (944 rows)
+### 3. write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020 (944 rows)
 
 <details><summary>
 View Answer
@@ -61,7 +61,7 @@ WHERE
 </details>
 
   
-### 4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" 
+### 4. write a query to get all the orders where customer name neither start with "A" and nor ends with "n" 
 
 <details><summary>
 View Answer

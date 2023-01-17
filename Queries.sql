@@ -42,3 +42,12 @@ FROM
     orders
 WHERE
     customer_name NOT LIKE 'A%n'
+
+/*5- write a query to get all the orders where profit is negative (1871 rows)*/
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    profit < 0;

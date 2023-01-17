@@ -8,7 +8,7 @@ MySQL exercises on the famous superstore dataset
 <p align="left">
   <img src="https://github.com/soopertramp/MySQL-Assignments/blob/main/dataset-cover.jpg">
 
-### 1- write a sql to get all the orders where customers name has "a" as second character and "d" as fourth character.
+### 1. Write an sql query to get all the orders where customers name has "a" as second character and "d" as fourth character.
 <details><summary>
 View Answer
 </summary>

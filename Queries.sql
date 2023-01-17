@@ -90,3 +90,13 @@ FROM
 WHERE
     category IN ('Technology' , 'Furniture')
         AND order_date BETWEEN '01-01-2020' AND '31-12-2020';
+
+/* 10-write a query to find all the orders where order date is in year 2020 but ship date is in 2021 */
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    order_Date BETWEEN '01-01-2020' AND '31-12-2020'
+        AND ship_date > '01-01-2021';

@@ -120,3 +120,20 @@ WHERE
     region = 'South' AND discount > 0; 
   
 </details>
+
+### 8- write a query to find top 5 orders with highest sales in furniture category
+
+<details><summary>
+View Answer
+</summary>  
+ 
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    category = 'Furniture'
+order by sales desc
+LIMIT 5;
+ 
+</details>

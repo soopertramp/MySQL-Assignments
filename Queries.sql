@@ -60,3 +60,12 @@ FROM
     orders
 WHERE
     quantity < 3 OR profit = 0;
+
+/* 7- your manager handles the sales for South region and he wants you to create a report of all the orders in his region where some discount is provided to the customers*/
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    region = 'South' AND discount > 0; 

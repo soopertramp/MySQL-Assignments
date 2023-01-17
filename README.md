@@ -5,6 +5,8 @@ MySQL exercises on the famous superstore dataset
 
 ### Find it [here](https://github.com/soopertramp/MySQL-Assignments/tree/main/Dataset)
 
+#### If you need queries in MySQL style you can find it [here](https://github.com/soopertramp/MySQL-Assignments/blob/main/Queries.sql)
+
 <p align="left">
   <img src="https://github.com/soopertramp/MySQL-Assignments/blob/main/dataset-cover.jpg">
 

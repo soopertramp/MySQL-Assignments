@@ -33,3 +33,12 @@ FROM
 WHERE
     ship_mode NOT IN ('Standard Class' , 'First Class')
         AND ship_date > '30-11-2020';
+
+/*4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" (9815 rows)*/
+
+SELECT 
+    customer_name
+FROM
+    orders
+WHERE
+    customer_name NOT LIKE 'A%n'

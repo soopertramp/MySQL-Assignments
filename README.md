@@ -76,7 +76,7 @@ WHERE
 
   </details>
 
-### 5- write a query to get all the orders where profit is negative (1871 rows)
+### 5- write a query to get all the orders where profit is negative
 
 <details><summary>
 View Answer

@@ -27,4 +27,4 @@ FROM
 WHERE
     customer_name LIKE '_a_d%';
 
-  </details>
+</details>

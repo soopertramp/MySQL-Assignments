@@ -90,3 +90,18 @@ WHERE
     profit < 0;
 
 </details>
+  
+### 6- write a query to get all the orders where either quantity is less than 3 or profit is 0
+
+<details><summary>
+View Answer
+</summary>  
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    quantity < 3 OR profit = 0;
+                
+</details>

@@ -29,7 +29,7 @@ WHERE
 
 </details>
 
-### *2- write a sql to get all the orders placed in the month of dec 2020 (352 rows)*/
+### 2- write a sql to get all the orders placed in the month of dec 2020
   
 <details><summary>
 View Answer
@@ -42,4 +42,20 @@ FROM
 WHERE
     order_Date BETWEEN '01-12-2020' AND '31-12-2020';
   
+</details>
+
+### 3- write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020 (944 rows)
+
+<details><summary>
+View Answer
+</summary>
+  
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    ship_mode NOT IN ('Standard Class' , 'First Class')
+        AND ship_date > '30-11-2020';  
+ 
 </details>

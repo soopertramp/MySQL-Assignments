@@ -51,3 +51,12 @@ FROM
     orders
 WHERE
     profit < 0;
+
+/* 6- write a query to get all the orders where either quantity is less than 3 or profit is 0 */
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    quantity < 3 OR profit = 0;

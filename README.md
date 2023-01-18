@@ -310,7 +310,7 @@ GROUP BY student_id, marks;
 </details>
 <br>
 
-### 17. write a query to find total number of products in each category.
+### 17. write a query to find total number of products in each category. :question:
 <details><summary>
 :arrow_forward: View Answer
 </summary>

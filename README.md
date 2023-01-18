@@ -190,7 +190,7 @@ WHERE
 </details>
 <br>
   
-/*11. write a update statement to update city as null for order ids :  CA-2020-161389 , US-2021-156909*/
+### 11. write a update statement to update city as null for order ids :  CA-2020-161389 , US-2021-156909
 
 <details><summary>
 :arrow_forward: View Answer

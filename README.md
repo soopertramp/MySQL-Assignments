@@ -242,3 +242,19 @@ FROM
 GROUP BY category;
 </details>
 <br>
+
+### 14. write a query to find sub-categories where average profit is more than the half of the max profit in that sub-category :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>  
+  
+SELECT 
+    sub_category
+FROM
+    orders
+GROUP BY sub_category
+HAVING AVG(profit) > MAX(profit) / 2;
+  
+</details>
+<br>

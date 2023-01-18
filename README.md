@@ -259,7 +259,7 @@ HAVING AVG(profit) > MAX(profit) / 2;
 </details>
 <br>
 
-### 15- create the exams table with below script; and write a query to find students who have got same marks in Physics and Chemistry. :question:
+### 15. create the exams table with below script; and write a query to find students who have got same marks in Physics and Chemistry. :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -292,5 +292,20 @@ WHERE
 GROUP BY student_id , marks
 HAVING COUNT(*) = 2;
 
+</details>
+<br>
+
+### 16. Write a query to findout the all the students marks in chemistry subject? :question:
+<details><summary>
+:arrow_forward: View Answer
+</summary> 
+SELECT 
+    student_id, subject, marks
+FROM
+    exams
+WHERE
+    subject = 'Chemistry'
+GROUP BY student_id, marks;
+  
 </details>
 <br>

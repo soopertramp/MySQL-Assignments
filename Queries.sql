@@ -133,3 +133,12 @@ SELECT
 FROM
     orders
 GROUP BY category;
+
+/*14- write a query to find sub-categories where average profit is more than the half of the max profit in that sub-category*/
+
+SELECT 
+    sub_category
+FROM
+    orders
+GROUP BY sub_category
+HAVING AVG(profit) > MAX(profit) / 2;

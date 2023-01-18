@@ -309,3 +309,23 @@ GROUP BY student_id, marks;
   
 </details>
 <br>
+
+### 17. write a query to find total number of products in each category.
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+select * from orders;
+
+SELECT 
+    category, COUNT(DISTINCT prodcut_name) AS no_of_products
+FROM
+    orders
+GROUP BY category;
+
+SELECT 
+    category, COUNT(DISTINCT product_id) AS no_of_products
+FROM
+    orders
+GROUP BY category;
+ </details>
+<br>

@@ -190,7 +190,7 @@ WHERE
 </details>
 <br>
   
-### 11. write a update statement to update city as null for order ids :  CA-2020-161389 , US-2021-156909
+### 11. write a update statement to update city as null for order ids :  CA-2020-161389 , US-2021-156909 :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -210,7 +210,7 @@ WHERE
 </details>
 <br>
 
-### 12. write a query to find orders where city is null (2 rows)
+### 12. write a query to find orders where city is null (2 rows) :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -226,7 +226,7 @@ WHERE
 </details>
 <br>
 
-### 13. write a query to get total profit, first order date and latest order date for each category
+### 13. write a query to get total profit, first order date and latest order date for each category :question:
 
 <details><summary>
 :arrow_forward: View Answer

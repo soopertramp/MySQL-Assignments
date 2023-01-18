@@ -198,3 +198,14 @@ FROM
     orders
 GROUP BY category;
 
+/* 18- write a query to find top 5 sub categories in west region by total quantity sold*/
+
+SELECT 
+    sub_category, SUM(quantity) AS total_quantity
+FROM
+    orders
+WHERE
+    region = 'West'
+GROUP BY sub_category
+ORDER BY total_quantity DESC
+LIMIT 5;

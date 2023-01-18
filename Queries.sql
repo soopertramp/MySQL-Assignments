@@ -181,3 +181,20 @@ FROM
 WHERE
     subject = 'Chemistry'
 GROUP BY student_id, marks;
+
+/*17- write a query to find total number of products in each category.*/
+
+select * from orders;
+
+SELECT 
+    category, COUNT(DISTINCT prodcut_name) AS no_of_products
+FROM
+    orders
+GROUP BY category;
+
+SELECT 
+    category, COUNT(DISTINCT product_id) AS no_of_products
+FROM
+    orders
+GROUP BY category;
+

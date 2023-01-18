@@ -114,3 +114,11 @@ SET
 WHERE
     order_id IN ('CA-2020-161389' , 'US-2021-156909');
     
+/*12- write a query to find orders where city is null (2 rows)*/
+
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    city IS NULL; 

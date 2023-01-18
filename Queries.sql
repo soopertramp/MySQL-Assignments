@@ -171,3 +171,13 @@ WHERE
     subject IN ('Physics' , 'Chemistry')
 GROUP BY student_id , marks
 HAVING COUNT(*) = 2;
+
+/*16. Write a query to findout the all the students marks in chemistry subject?*/
+
+SELECT 
+    student_id, subject, marks
+FROM
+    exams
+WHERE
+    subject = 'Chemistry'
+GROUP BY student_id, marks;

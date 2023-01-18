@@ -348,3 +348,18 @@ LIMIT 5;
   
 </details>
 <br>
+
+### 19. Write a query to find total sales for each region and ship mode combination for orders in year 2020 :question:
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    region, ship_mode, SUM(sales) AS total_sales
+FROM
+    orders
+WHERE
+    order_Date BETWEEN '01-01-2020' AND '31-12-2021'
+GROUP BY region , ship_mode
+ORDER BY region , ship_mode;
+  </details>
+<br>

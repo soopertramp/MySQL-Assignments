@@ -220,3 +220,11 @@ WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2021'
 GROUP BY region , ship_mode
 ORDER BY region , ship_mode;
+
+/*20. Write a query to find total sales for each region*/
+
+SELECT 
+    region, SUM(sales) AS total_sales
+FROM
+    orders
+GROUP BY region; 

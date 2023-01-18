@@ -363,3 +363,15 @@ GROUP BY region , ship_mode
 ORDER BY region , ship_mode;
   </details>
 <br>
+
+### 20. Write a query to find total sales for each region :question:
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    region, SUM(sales) AS total_sales
+FROM
+    orders
+GROUP BY region; 
+    </details>
+<br>

@@ -100,3 +100,17 @@ FROM
 WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2020'
         AND ship_date > '01-01-2021';
+
+/*11- write a update statement to update city as null for order ids :  CA-2020-161389 , US-2021-156909*/
+
+SELECT 
+    *
+FROM
+    orders;
+    
+UPDATE orders 
+SET 
+    city = NULL
+WHERE
+    order_id IN ('CA-2020-161389' , 'US-2021-156909');
+    

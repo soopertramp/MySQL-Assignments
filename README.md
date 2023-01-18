@@ -209,3 +209,19 @@ WHERE
     
 </details>
 <br>
+
+### 12. write a query to find orders where city is null (2 rows)
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>  
+  
+SELECT 
+    *
+FROM
+    orders
+WHERE
+    city IS NULL; 
+
+</details>
+<br>

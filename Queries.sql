@@ -209,3 +209,14 @@ WHERE
 GROUP BY sub_category
 ORDER BY total_quantity DESC
 LIMIT 5;
+
+/*19. Write a query to find total sales for each region and ship mode combination for orders in year 2020*/
+
+SELECT 
+    region, ship_mode, SUM(sales) AS total_sales
+FROM
+    orders
+WHERE
+    order_Date BETWEEN '01-01-2020' AND '31-12-2021'
+GROUP BY region , ship_mode
+ORDER BY region , ship_mode;

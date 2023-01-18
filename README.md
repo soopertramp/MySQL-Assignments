@@ -225,3 +225,20 @@ WHERE
 
 </details>
 <br>
+
+### 13. write a query to get total profit, first order date and latest order date for each category
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+  
+SELECT 
+    category,
+    SUM(profit) AS profit,
+    MIN(order_date) AS first_order,
+    MAX(order_date) AS latest_order
+FROM
+    orders
+GROUP BY category;
+</details>
+<br>

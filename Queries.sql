@@ -172,6 +172,18 @@ WHERE
 GROUP BY student_id , marks
 HAVING COUNT(*) = 2;
 
+SELECT 
+    student_id,
+    COUNT(*) AS total_records,
+    COUNT(DISTINCT marks) AS distinct_marks
+FROM
+    exams
+WHERE
+    subject IN ('Physics' , 'Chemistry')
+GROUP BY student_id
+HAVING COUNT(*) = 2
+    AND COUNT(DISTINCT marks) = 1;
+
 /*16. Write a query to findout the all the students marks in chemistry subject?*/
 
 SELECT 

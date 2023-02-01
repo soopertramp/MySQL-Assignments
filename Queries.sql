@@ -240,3 +240,4 @@ SELECT
 FROM
     orders
 GROUP BY region; 
+

@@ -463,3 +463,31 @@ GROUP BY d.dep_name;
 
 </details>
 <br>
+
+### 24- write a query to print dep names where none of the employees have same salary.*/
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    *
+FROM
+    employee;
+    
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    e.dept_id, d.dep_name
+FROM
+    employee e
+        INNER JOIN
+    dept d ON e.dept_id = d.dep_id
+GROUP BY e.dept_id , d.dep_name
+HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
+
+</details>
+<br>

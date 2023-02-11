@@ -737,3 +737,18 @@ GROUP BY e2.emp_name;
 
 </details>
 <br>
+
+### 35.  write a query to get number of business days between order_date and ship_date (exclude weekends). Assume that all order dateand ship date are on weekdays only :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    DATEDIFF(ship_date, order_date) - FLOOR(DATEDIFF(ship_date, order_date) / 7) * 2 AS business_days
+FROM
+    orders;
+
+</details>
+<br>
+
+

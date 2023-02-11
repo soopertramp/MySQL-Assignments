@@ -254,7 +254,7 @@ FROM
     returns;
 
 SELECT 
-    o.region, COUNT(r.order_id) AS no_of_items_returned
+    o.region, COUNT(DISTINCT o.order_id) AS no_of_items_returned
 FROM
     orders AS o
         INNER JOIN

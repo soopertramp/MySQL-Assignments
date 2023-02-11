@@ -317,3 +317,25 @@ FROM
     dept d ON e.dept_id = d.dep_id
 GROUP BY e.dept_id , d.dep_name
 HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
+
+/*25- write a query to print sub categories where we have all 3 kinds of returns (others,bad quality,wrong items)*/
+
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.sub_category, COUNT(DISTINCT r.return_reason) as return_reason
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY o.sub_category
+HAVING COUNT(DISTINCT r.return_reason) = 3
+ORDER BY o.sub_category; 

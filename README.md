@@ -387,3 +387,29 @@ FROM
 GROUP BY region; 
     </details>
 <br>
+
+### 21. write a query to get region wise count of return orders
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.region, COUNT(r.order_id) AS no_of_items_returned
+FROM
+    orders AS o
+        INNER JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY o.region;
+</details>
+<br>

@@ -605,3 +605,32 @@ FROM
     employee AS e ON d.dep_id = e.dept_id
 GROUP BY d.dep_id
 HAVING COUNT(e.emp_id) = 0; 
+
+### 29. write a query to print employees name for dep id is not avaiable in dept table :question:
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    e.emp_id, e.emp_name
+FROM
+    employee AS e
+        LEFT JOIN
+    dept AS d ON e.dept_id = d.dep_id
+WHERE
+    d.dep_id IS NULL;
+
+-- SELECT 
+--     e.emp_id, e.emp_name
+-- FROM
+--     employee AS e
+--         LEFT JOIN
+--     dept AS d ON e.dept_id = d.dep_id
+-- GROUP BY e.emp_id
+-- HAVING COUNT(d.dep_id) = 0

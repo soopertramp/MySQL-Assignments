@@ -442,3 +442,21 @@ WHERE
 --     dept AS d ON e.dept_id = d.dep_id
 -- GROUP BY e.emp_id
 -- HAVING COUNT(d.dep_id) = 0
+
+/*31- write a query to print emp name , their manager name joining the same table (self join)*/
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    e1.emp_name, e2.emp_name AS manager_name
+FROM
+    employee AS e1
+        JOIN
+    employee AS e2 ON e1.manager_id = e2.emp_id;

@@ -646,3 +646,28 @@ WHERE
 -- HAVING COUNT(d.dep_id) = 0
 </details>
 <br>
+
+### 31. write a query to print emp name , their manager name joining the same table (self join) :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    e1.emp_name, e2.emp_name AS manager_name
+FROM
+    employee AS e1
+        JOIN
+    employee AS e2 ON e1.manager_id = e2.emp_id;
+
+</details>
+<br>

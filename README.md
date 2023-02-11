@@ -413,3 +413,34 @@ FROM
 GROUP BY o.region;
 </details>
 <br>
+
+### 22- write a query to get category wise sales of orders that were not returned
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    o.category,
+    sum(o.sales) as total_sales
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+WHERE
+    o.order_id != r.order_id
+GROUP BY o.category;
+
+SELECT 
+    o.category, SUM(o.sales) AS total_sales
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+WHERE
+    o.order_id IS NULL
+GROUP BY o.category;
+
+</details>
+<br>
+

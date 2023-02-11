@@ -556,3 +556,13 @@ FROM
     orders
 GROUP BY category;
 
+/*38- write a query print top 5 cities in west region by average no of days between order date and ship date.*/
+
+SELECT 
+    city, region, avg(DATEDIFF(ship_date, order_date)) as avg_days
+FROM
+    orders
+WHERE
+    region = 'West'
+GROUP BY city
+LIMIT 5; 

@@ -414,7 +414,7 @@ GROUP BY o.region;
 </details>
 <br>
 
-### 22- write a query to get category wise sales of orders that were not returned :question:
+### 22. write a query to get category wise sales of orders that were not returned :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -444,7 +444,7 @@ GROUP BY o.category;
 </details>
 <br>
 
-### 23- write a query to print dep name and average salary of employees in that dep :question:
+### 23. write a query to print dep name and average salary of employees in that dep :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -464,7 +464,7 @@ GROUP BY d.dep_name;
 </details>
 <br>
 
-### 24- write a query to print dep names where none of the employees have same salary :question:
+### 24. write a query to print dep names where none of the employees have same salary :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -492,7 +492,7 @@ HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
 </details>
 <br>
 
-### 25- write a query to print sub categories where we have all 3 kinds of returns (others,bad quality,wrong items) :question:
+### 25. write a query to print sub categories where we have all 3 kinds of returns (others,bad quality,wrong items) :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -520,7 +520,7 @@ ORDER BY o.sub_category;
 </details>
 <br>
 
-### 26- write a query to find cities where not even a single order was returned :question:
+### 26. write a query to find cities where not even a single order was returned :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -556,7 +556,7 @@ HAVING COUNT(r.return_reason) = 0;
 </details>
 <br>
 
-### 27- write a query to find top 3 subcategories by sales of returned orders in east region :question:
+### 27. write a query to find top 3 subcategories by sales of returned orders in east region :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -585,3 +585,23 @@ LIMIT 3;
 
 </details>
 <br>
+
+### 28. write a query to print dep name for which there is no employee*/
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    d.dep_id, d.dep_name
+FROM
+    dept AS d
+        LEFT JOIN
+    employee AS e ON d.dep_id = e.dept_id
+GROUP BY d.dep_id
+HAVING COUNT(e.emp_id) = 0; 

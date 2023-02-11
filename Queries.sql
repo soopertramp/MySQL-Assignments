@@ -478,3 +478,18 @@ WHERE
     MONTH(o.order_Date) = '11'
 GROUP BY o.sub_category
 HAVING COUNT(r.order_id) = 0;
+
+/*33- orders table can have multiple rows for a particular order_id when customers buys more than 1 product in an order.
+write a query to find order ids where there is only 1 product bought by the customer.*/
+
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    order_id
+FROM
+    orders
+GROUP BY order_id
+HAVING COUNT(order_id) = 1;

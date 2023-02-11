@@ -444,7 +444,7 @@ GROUP BY o.category;
 </details>
 <br>
 
-### 23- write a query to print dep name and average salary of employees in that dep. :question:
+### 23- write a query to print dep name and average salary of employees in that dep :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -464,7 +464,7 @@ GROUP BY d.dep_name;
 </details>
 <br>
 
-### 24- write a query to print dep names where none of the employees have same salary. :question:
+### 24- write a query to print dep names where none of the employees have same salary :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -516,6 +516,36 @@ FROM
 GROUP BY o.sub_category
 HAVING COUNT(DISTINCT r.return_reason) = 3
 ORDER BY o.sub_category;
+
+</details>
+<br>
+
+### 27- write a query to find top 3 subcategories by sales of returned orders in east region :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.sub_category, SUM(o.sales) AS total_return_sales
+FROM
+    orders AS o
+        INNER JOIN
+    returns AS r ON o.order_id = r.order_id
+WHERE
+    o.region = 'east'
+GROUP BY o.sub_category
+ORDER BY total_return_sales DESC
+LIMIT 3;
 
 </details>
 <br>

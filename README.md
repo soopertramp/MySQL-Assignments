@@ -715,3 +715,25 @@ GROUP BY order_id
 HAVING COUNT(order_id) = 1;
 </details>
 <br>
+
+### 34. write a query to print manager names along with the comma separated list(order by emp salary) of all employees directly reporting to him. :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+select * from employee;
+select * from dept;
+
+SELECT 
+    e2.emp_name AS manager_name,
+    GROUP_CONCAT(e1.emp_name
+        ORDER BY e1.salary DESC
+        SEPARATOR ',') AS emp_list
+FROM
+    employee AS e1
+        INNER JOIN
+    employee AS e2 ON e1.manager_id = e2.emp_id
+GROUP BY e2.emp_name;
+
+</details>
+<br>

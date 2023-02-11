@@ -511,3 +511,10 @@ FROM
     employee AS e2 ON e1.manager_id = e2.emp_id
 GROUP BY e2.emp_name;
 
+/*35- write a query to get number of business days between order_date and ship_date (exclude weekends). Assume that all order date 
+and ship date are on weekdays only */
+
+SELECT 
+    DATEDIFF(ship_date, order_date) - FLOOR(DATEDIFF(ship_date, order_date) / 7) * 2 AS business_days
+FROM
+    orders;

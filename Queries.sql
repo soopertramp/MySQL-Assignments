@@ -338,4 +338,58 @@ FROM
     returns AS r ON o.order_id = r.order_id
 GROUP BY o.sub_category
 HAVING COUNT(DISTINCT r.return_reason) = 3
-ORDER BY o.sub_category; 
+ORDER BY o.sub_category;
+
+/*26- write a query to find cities where not even a single order was returned.*/
+
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.order_id, o.city
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY city
+HAVING COUNT(r.order_id) = 0;
+
+SELECT 
+    o.order_id,o.city
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY city
+HAVING COUNT(r.return_reason) = 0
+
+/*27- write a query to find top 3 subcategories by sales of returned orders in east region*/
+
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.sub_category, SUM(o.sales) AS total_return_sales
+FROM
+    orders AS o
+        INNER JOIN
+    returns AS r ON o.order_id = r.order_id
+WHERE
+    o.region = 'east'
+GROUP BY o.sub_category
+ORDER BY total_return_sales DESC
+LIMIT 3;

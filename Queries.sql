@@ -460,3 +460,21 @@ FROM
     employee AS e1
         JOIN
     employee AS e2 ON e1.manager_id = e2.emp_id;
+
+/*32- write a query to find subcategories who never had any return orders in the month of november (irrespective of years)*/
+
+SELECT 
+    *
+FROM
+    orders;
+
+SELECT 
+    o.sub_category
+FROM
+    orders AS o
+        INNER JOIN
+    returns AS r ON o.order_id = r.order_id
+WHERE
+    MONTH(o.order_Date) = '11'
+GROUP BY o.sub_category
+HAVING COUNT(r.order_id) = 0;

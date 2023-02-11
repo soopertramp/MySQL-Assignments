@@ -518,3 +518,26 @@ SELECT
     DATEDIFF(ship_date, order_date) - FLOOR(DATEDIFF(ship_date, order_date) / 7) * 2 AS business_days
 FROM
     orders;
+
+/*36- write a query to print 3 columns : category, total_sales and (total sales of returned orders)*/
+
+SELECT 
+    *
+FROM
+    orders;
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.category,
+    SUM(o.sales) AS total_sales,
+    SUM(CASE
+        WHEN r.order_id IS NOT NULL THEN sales
+    END) AS return_orders_sales
+FROM
+    orders o
+        LEFT JOIN
+    returns r ON o.order_id = r.order_id
+GROUP BY category

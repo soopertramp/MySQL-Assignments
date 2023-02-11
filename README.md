@@ -585,3 +585,64 @@ LIMIT 3;
 
 </details>
 <br>
+
+### 28. write a query to print dep name for which there is no employee :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    d.dep_id, d.dep_name
+FROM
+    dept AS d
+        LEFT JOIN
+    employee AS e ON d.dep_id = e.dept_id
+GROUP BY d.dep_id
+HAVING COUNT(e.emp_id) = 0; 
+</details>
+<br>
+
+### 29. write a query to print employees name for dep id is not avaiable in dept table :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    e.emp_id, e.emp_name
+FROM
+    employee AS e
+        LEFT JOIN
+    dept AS d ON e.dept_id = d.dep_id
+WHERE
+    d.dep_id IS NULL;
+
+-- SELECT 
+--     e.emp_id, e.emp_name
+-- FROM
+--     employee AS e
+--         LEFT JOIN
+--     dept AS d ON e.dept_id = d.dep_id
+-- GROUP BY e.emp_id
+-- HAVING COUNT(d.dep_id) = 0
+</details>
+<br>

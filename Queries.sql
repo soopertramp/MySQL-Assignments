@@ -541,3 +541,18 @@ FROM
         LEFT JOIN
     returns r ON o.order_id = r.order_id
 GROUP BY category
+
+/*37- write a query to print 3 columns category, total_sales_2019(sales in year 2019), total_sales_2020(sales in year 2020)*/
+
+SELECT 
+    category,
+    SUM(CASE
+        WHEN YEAR(order_Date) = 2019 THEN sales
+    END) AS total_sales_2019,
+    SUM(CASE
+        WHEN YEAR(order_Date) = 2020 THEN sales
+    END) AS total_sales_2020
+FROM
+    orders
+GROUP BY category;
+

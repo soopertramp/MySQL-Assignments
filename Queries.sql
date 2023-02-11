@@ -284,5 +284,16 @@ WHERE
     o.order_id IS NULL
 GROUP BY o.category;
 
+/*23- write a query to print dep name and average salary of employees in that dep .*/
 
+select * from employee;
+select * from dept;
+
+SELECT 
+    d.dep_name, AVG(salary) AS salary
+FROM
+    dept AS d
+        INNER JOIN
+    employee AS e ON d.dep_id = e.dept_id
+GROUP BY d.dep_name;
 

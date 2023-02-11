@@ -751,4 +751,31 @@ FROM
 </details>
 <br>
 
+### 36. write a query to print 3 columns : category, total_sales and (total sales of returned orders) :quetsion:
 
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    orders;
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.category,
+    SUM(o.sales) AS total_sales,
+    SUM(CASE
+        WHEN r.order_id IS NOT NULL THEN sales
+    END) AS return_orders_sales
+FROM
+    orders o
+        LEFT JOIN
+    returns r ON o.order_id = r.order_id
+GROUP BY category
+
+</details>
+<br>

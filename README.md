@@ -388,7 +388,7 @@ GROUP BY region;
     </details>
 <br>
 
-### 21. write a query to get region wise count of return orders
+### 21. write a query to get region wise count of return orders :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -414,7 +414,7 @@ GROUP BY o.region;
 </details>
 <br>
 
-### 22- write a query to get category wise sales of orders that were not returned
+### 22- write a query to get category wise sales of orders that were not returned :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -444,7 +444,7 @@ GROUP BY o.category;
 </details>
 <br>
 
-### 23- write a query to print dep name and average salary of employees in that dep .
+### 23- write a query to print dep name and average salary of employees in that dep. :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -464,7 +464,7 @@ GROUP BY d.dep_name;
 </details>
 <br>
 
-### 24- write a query to print dep names where none of the employees have same salary.*/
+### 24- write a query to print dep names where none of the employees have same salary. :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -488,6 +488,34 @@ FROM
     dept d ON e.dept_id = d.dep_id
 GROUP BY e.dept_id , d.dep_name
 HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
+
+</details>
+<br>
+
+### 25- write a query to print sub categories where we have all 3 kinds of returns (others,bad quality,wrong items) :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.sub_category, COUNT(DISTINCT r.return_reason) as return_reason
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY o.sub_category
+HAVING COUNT(DISTINCT r.return_reason) = 3
+ORDER BY o.sub_category;
 
 </details>
 <br>

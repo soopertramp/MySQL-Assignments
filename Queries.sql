@@ -393,3 +393,24 @@ WHERE
 GROUP BY o.sub_category
 ORDER BY total_return_sales DESC
 LIMIT 3;
+
+/*28- write a query to print dep name for which there is no employee*/
+
+SELECT 
+    *
+FROM
+    employee;
+SELECT 
+    *
+FROM
+    dept;
+
+SELECT 
+    d.dep_id, d.dep_name
+FROM
+    dept AS d
+        LEFT JOIN
+    employee AS e ON d.dep_id = e.dept_id
+GROUP BY d.dep_id
+HAVING COUNT(e.emp_id) = 0; 
+

@@ -696,3 +696,22 @@ HAVING COUNT(r.order_id) = 0;
 
 </details>
 <br>
+
+### 33. orders table can have multiple rows for a particular order_id when customers buys more than 1 product in an order. write a query to find order ids where there is only 1 product bought by the customer :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    order_id
+FROM
+    orders
+GROUP BY order_id
+HAVING COUNT(order_id) = 1;
+</details>
+<br>

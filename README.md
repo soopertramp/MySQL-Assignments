@@ -520,6 +520,42 @@ ORDER BY o.sub_category;
 </details>
 <br>
 
+### 26- write a query to find cities where not even a single order was returned :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    orders;
+    
+SELECT 
+    *
+FROM
+    returns;
+
+SELECT 
+    o.order_id, o.city
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY city
+HAVING COUNT(r.order_id) = 0;
+
+SELECT 
+    o.order_id,o.city
+FROM
+    orders AS o
+        LEFT JOIN
+    returns AS r ON o.order_id = r.order_id
+GROUP BY city
+HAVING COUNT(r.return_reason) = 0;
+
+</details>
+<br>
+
 ### 27- write a query to find top 3 subcategories by sales of returned orders in east region :question:
 
 <details><summary>

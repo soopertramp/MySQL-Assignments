@@ -817,3 +817,27 @@ LIMIT 5;
 
 </details>
 <br>
+
+### 39. write a query to print emp name, manager name and senior manager name (senior manager is manager's manager) :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    *
+FROM
+    employee;
+
+SELECT 
+    e1.emp_name,
+    e2.emp_name AS manager_name,
+    e3.emp_name AS senior_manager
+FROM
+    employee as e1
+        INNER JOIN
+    employee AS e2 ON e1.manager_id = e2.emp_id
+        INNER JOIN
+    employee AS e3 ON e2.manager_id = e3.emp_id
+
+</details>
+<br>

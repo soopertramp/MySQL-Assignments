@@ -975,7 +975,7 @@ FROM
 </details>
 <br>
 
-### 44. write a query to print below output from orders data. 
+### 45. write a query to print below output from orders data. 
 <b>example output - hierarchy type,hierarchy name ,total_sales_in_west_region, total_sales_in_east_region
 
 |category | Technology|
@@ -1026,5 +1026,19 @@ FROM
     orders
 GROUP BY ship_mode;
 
+</details>
+<br>
+
+### 46. the first 2 characters of order_id represents the country of order placed . write a query to print total no of orders placed in each country (an order can have 2 rows in the data when more than 1 item was purchased in the order but it should be considered as 1 order) :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary> 
+SELECT 
+    LEFT(order_id, 2) AS country,
+    COUNT(DISTINCT order_id) AS total_orders
+FROM
+    orders
+GROUP BY LEFT(order_id, 2)
 </details>
 <br>

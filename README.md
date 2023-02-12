@@ -886,3 +886,17 @@ GROUP BY team;
 
 </details>
 <br>
+
+### 42. write a query to print first name and last name of a customer using orders table(everything after first space can be considered  as last name) customer_name, first_name,last_name :question:
+
+select * from orders;
+
+SELECT 
+	customer_name,
+    SUBSTRING(customer_name,
+        1,
+        LOCATE(' ', customer_name) - 1) AS first_name,
+    SUBSTRING(customer_name,
+        LOCATE(' ', customer_name) + 1) AS last_name
+FROM
+    orders;

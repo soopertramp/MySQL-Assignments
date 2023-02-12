@@ -844,7 +844,7 @@ FROM
 
 ### 41. Create this table and Execute the Question 
 
-create table icc_world_cup
+<b>create table icc_world_cup
 (
 Team_1 Varchar(20),
 Team_2 Varchar(20),
@@ -855,9 +855,9 @@ INSERT INTO icc_world_cup values('India','SL','India');
 INSERT INTO icc_world_cup values('SL','Aus','Aus');
 INSERT INTO icc_world_cup values('SA','Eng','Eng');
 INSERT INTO icc_world_cup values('Eng','NZ','NZ');
-INSERT INTO icc_world_cup values('Aus','India','India');
-
-#### write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. :question:
+  INSERT INTO icc_world_cup values('Aus','India','India');</b>
+  
+### write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. :question:
 
 <details><summary>
 :arrow_forward: View Answer
@@ -886,6 +886,7 @@ GROUP BY team;
 
 </details>
 <br>
+<<<<<<< HEAD
 
 ### 42. write a query to print first name and last name of a customer using orders table(everything after first space can be considered  as last name) customer_name, first_name,last_name :question:
 
@@ -900,3 +901,5 @@ SELECT
         LOCATE(' ', customer_name) + 1) AS last_name
 FROM
     orders;
+=======
+>>>>>>> 848d556ab61e6c6e727a391bbaa37549e139971d

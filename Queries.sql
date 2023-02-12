@@ -688,3 +688,50 @@ SELECT
     LENGTH(customer_name) - LENGTH(REPLACE(LOWER(customer_name), 'n', '')) AS count_of_occurence_of_n
 FROM
     orders;
+
+/*5-write a query to print below output from orders data. 
+example output hierarchy type,hierarchy name ,total_sales_in_west_region, total_sales_in_east_region
+category , Technology, ,
+category, Furniture, ,
+category, Office Supplies, ,
+sub_category, Art , ,
+sub_category, Furnishings, ,
+--and so on all the category ,subcategory and ship_mode hierarchies */
+
+SELECT 
+    'category' AS hierarchy_type,
+    category AS hierarchy_name,
+    SUM(CASE
+        WHEN region = 'West' THEN sales
+    END) AS total_sales_in_west_region,
+    SUM(CASE
+        WHEN region = 'East' THEN sales
+    END) AS total_sales_in_east_region
+FROM
+    orders
+GROUP BY category 
+UNION ALL SELECT 
+    'sub_category' AS hierarchy_type,
+    sub_category AS hierarchy_name,
+    SUM(CASE
+        WHEN region = 'West' THEN sales
+    END) AS total_sales_in_west_region,
+    SUM(CASE
+        WHEN region = 'East' THEN sales
+    END) AS total_sales_in_east_region
+FROM
+    orders
+GROUP BY sub_category 
+UNION ALL SELECT 
+    'ship_mode' AS hierarchy_type,
+    ship_mode AS hierarchy_name,
+    SUM(CASE
+        WHEN region = 'West' THEN sales
+    END) AS total_sales_in_west_region,
+    SUM(CASE
+        WHEN region = 'East' THEN sales
+    END) AS total_sales_in_east_region
+FROM
+    orders
+GROUP BY ship_mode;
+

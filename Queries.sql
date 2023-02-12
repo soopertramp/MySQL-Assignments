@@ -735,3 +735,14 @@ FROM
     orders
 GROUP BY ship_mode;
 
+
+/*46- the first 2 characters of order_id represents the country of order placed . write a query to print total no of orders placed 
+in each country (an order can have 2 rows in the data when more than 1 item was purchased in the order but it should be considered as
+ 1 order)*/
+ 
+SELECT 
+    LEFT(order_id, 2) AS country,
+    COUNT(DISTINCT order_id) AS total_orders
+FROM
+    orders
+GROUP BY LEFT(order_id, 2)

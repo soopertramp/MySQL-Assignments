@@ -844,7 +844,7 @@ FROM
 
 ### 41. Create this table and Execute the Question 
 
-create table icc_world_cup
+``` create table icc_world_cup
 (
 Team_1 Varchar(20),
 Team_2 Varchar(20),
@@ -855,7 +855,7 @@ INSERT INTO icc_world_cup values('India','SL','India');
 INSERT INTO icc_world_cup values('SL','Aus','Aus');
 INSERT INTO icc_world_cup values('SA','Eng','Eng');
 INSERT INTO icc_world_cup values('Eng','NZ','NZ');
-INSERT INTO icc_world_cup values('Aus','India','India');
+INSERT INTO icc_world_cup values('Aus','India','India');```
 
 #### write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. :question:
 

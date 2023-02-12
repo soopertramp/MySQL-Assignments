@@ -888,7 +888,9 @@ GROUP BY team;
 <br>
 
 ### 42. write a query to print first name and last name of a customer using orders table(everything after first space can be considered  as last name) customer_name, first_name,last_name :question:
-
+<details><summary>
+:arrow_forward: View Answer
+</summary>
 select * from orders;
 
 SELECT 
@@ -900,6 +902,9 @@ SELECT
         LOCATE(' ', customer_name) + 1) AS last_name
 FROM
     orders;
+
+</details>
+<br>
 
 ### 43. Run below script to create drivers table:
 
@@ -913,13 +918,14 @@ FROM
 
 insert into drivers values('dri_1', '09:00', '09:30', 'a','b'),('dri_1', '09:30', '10:30', 'b','c'),('dri_1','11:00','11:30', 'd','e');
 insert into drivers values('dri_1', '12:00', '12:30', 'f','g'),('dri_1', '13:30', '14:30', 'c','h');
-insert into drivers values('dri_2', '12:15', '12:30', 'f','g'),('dri_2', '13:30', '14:30', 'c','h'); 
+insert into drivers values('dri_2', '12:15', '12:30', 'f','g'),('dri_2', '13:30', '14:30', 'c','h'); </b>
 
 /*write a query to print below output using drivers table. Profit rides are the no of rides where end location of a ride is same as start location of immediate next ride for a driver :question:
+
 | id        | total_rides | profit_rides |
-------------------------------------------
-| dri_1,          |  5,     |        1 
-| dri_2,       |     2,      |       0*/</b>
+------------|-------------|--------------|
+| dri_1,          |  5,     |        1 |
+| dri_2,       |     2,      |       0 |
 
 SELECT 
     *

@@ -946,6 +946,8 @@ FROM (
 ) A
 GROUP BY id;
 
+#### Using Self Join
+
 WITH rides AS (
   SELECT *, ROW_NUMBER() OVER (PARTITION BY id ORDER BY start_time ASC) AS rn
   FROM drivers

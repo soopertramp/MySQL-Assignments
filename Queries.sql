@@ -584,3 +584,41 @@ FROM
     employee AS e2 ON e1.manager_id = e2.emp_id
         INNER JOIN
     employee AS e3 ON e2.manager_id = e3.emp_id
+
+/*41. Create this table and Execute the Question*/
+
+create table icc_world_cup
+(
+Team_1 Varchar(20),
+Team_2 Varchar(20),
+Winner Varchar(20)
+);
+
+INSERT INTO icc_world_cup values('India','SL','India');
+INSERT INTO icc_world_cup values('SL','Aus','Aus');
+INSERT INTO icc_world_cup values('SA','Eng','Eng');
+INSERT INTO icc_world_cup values('Eng','NZ','NZ');
+INSERT INTO icc_world_cup values('Aus','India','India');
+
+/*write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. */
+
+select * from icc_world_cup;
+
+WITH all_teams AS (
+  SELECT 
+    Team_1 AS team, 
+    CASE WHEN Team_1 = winner THEN 1 ELSE 0 END AS win_flag 
+  FROM icc_world_cup
+  UNION ALL 
+  SELECT 
+    Team_2 AS team, 
+    CASE WHEN Team_2 = winner THEN 1 ELSE 0 END AS win_flag 
+  FROM icc_world_cup
+)
+SELECT 
+  team, 
+  COUNT(*) AS matches_played, 
+  SUM(win_flag) AS matches_won, 
+  COUNT(*) - SUM(win_flag) AS matches_lost
+FROM all_teams
+GROUP BY team;

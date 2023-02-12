@@ -938,7 +938,8 @@ SELECT
 FROM
     drivers;
     
-
+#### Using Window Function
+	
 SELECT id, COUNT(*) AS total_rides, SUM(CASE WHEN end_loc = next_start_location THEN 1 ELSE 0 END) AS profit_rides
 FROM (
   SELECT *, LEAD(start_loc, 1) OVER (PARTITION BY id ORDER BY start_time ASC) AS next_start_location

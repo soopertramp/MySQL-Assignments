@@ -680,3 +680,11 @@ LEFT JOIN rides r2
 ON r1.id = r2.id AND r1.end_loc = r2.start_loc AND r1.rn + 1 = r2.rn
 GROUP BY r1.id;
 
+/*44- write a query to print customer name and no of occurence of character 'n' in the customer name.
+customer_name , count_of_occurence_of_n*/
+
+SELECT 
+    customer_name,
+    LENGTH(customer_name) - LENGTH(REPLACE(LOWER(customer_name), 'n', '')) AS count_of_occurence_of_n
+FROM
+    orders;

@@ -961,3 +961,16 @@ GROUP BY r1.id;
 </details>
 <br>
 
+### 44. write a query to print customer name and no of occurence of character 'n' in the customer name.customer_name , count_of_occurence_of_n :question:
+
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+SELECT 
+    customer_name,
+    LENGTH(customer_name) - LENGTH(REPLACE(LOWER(customer_name), 'n', '')) AS count_of_occurence_of_n
+FROM
+    orders;
+
+</details>
+<br>

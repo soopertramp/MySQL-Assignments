@@ -47,7 +47,8 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+
+```sql	
 SELECT 
     *
 FROM
@@ -57,13 +58,15 @@ WHERE
   
 </details>
 <br>
-  
+```
+	
 ### 3. write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020:question:
 
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+ 
+```sql	
 SELECT 
     *
 FROM
@@ -71,7 +74,8 @@ FROM
 WHERE
     ship_mode NOT IN ('Standard Class' , 'First Class')
         AND ship_date > '30-11-2020';  
- 
+```
+	
 </details>
 <br>
   
@@ -80,14 +84,16 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+ 
+```sql	
 SELECT 
     customer_name
 FROM
     orders
 WHERE
     customer_name NOT LIKE 'A%n'
-
+```
+	
   </details>
 <br>
   
@@ -97,13 +103,15 @@ WHERE
 :arrow_forward: View Answer
 </summary>  
 
+```sql	
 SELECT 
     *
 FROM
     orders
 WHERE
     profit < 0;
-
+```
+	      
 </details>
 <br>
   

@@ -23,6 +23,7 @@ MySQL exercises on the famous superstore dataset
 :arrow_forward: View Answer
 </summary>
 
+```
 SELECT 
     customer_name
 FROM
@@ -37,7 +38,7 @@ FROM
     orders
 WHERE
     customer_name LIKE '_a_d%';
-
+```
 </details>
 <br>  
   

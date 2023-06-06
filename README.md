@@ -367,7 +367,9 @@ SELECT
 FROM
     orders
 GROUP BY category;
+```	
 
+```sql	
 SELECT 
     category, COUNT(DISTINCT product_id) AS no_of_products
 FROM
@@ -384,6 +386,7 @@ GROUP BY category;
 :arrow_forward: View Answer
 </summary>
   
+```sql	
 SELECT 
     sub_category, SUM(quantity) AS total_quantity
 FROM
@@ -393,7 +396,7 @@ WHERE
 GROUP BY sub_category
 ORDER BY total_quantity DESC
 LIMIT 5;
-  
+```  
 </details>
 <br>
 
@@ -401,6 +404,7 @@ LIMIT 5;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql	
 SELECT 
     region, ship_mode, SUM(sales) AS total_sales
 FROM
@@ -409,6 +413,7 @@ WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2021'
 GROUP BY region , ship_mode
 ORDER BY region , ship_mode;
+```sql	
   </details>
 <br>
 

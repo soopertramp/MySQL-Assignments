@@ -1135,16 +1135,21 @@ GROUP BY r1.id;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql
+	
 SELECT 
     customer_name,
     LENGTH(customer_name) - LENGTH(REPLACE(LOWER(customer_name), 'n', '')) AS count_of_occurence_of_n
 FROM
     orders;
-
+```
+	
 </details>
 <br>
 
 ### 45. write a query to print below output from orders data. 
+
 <b>example output - hierarchy type,hierarchy name ,total_sales_in_west_region, total_sales_in_east_region
 
 |category | Technology|
@@ -1158,6 +1163,9 @@ FROM
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql
+	
 SELECT 
     'category' AS hierarchy_type,
     category AS hierarchy_name,
@@ -1194,7 +1202,8 @@ UNION ALL SELECT
 FROM
     orders
 GROUP BY ship_mode;
-
+```
+	
 </details>
 <br>
 
@@ -1202,12 +1211,17 @@ GROUP BY ship_mode;
 
 <details><summary>
 :arrow_forward: View Answer
-</summary> 
+</summary>
+
+```sql
+	
 SELECT 
     LEFT(order_id, 2) AS country,
     COUNT(DISTINCT order_id) AS total_orders
 FROM
     orders
 GROUP BY LEFT(order_id, 2)
+```
+	
 </details>
 <br>

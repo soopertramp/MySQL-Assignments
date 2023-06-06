@@ -755,22 +755,27 @@ WHERE
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
     employee;
+```
+```sql	
 SELECT 
     *
 FROM
     dept;
-
+```
+```sql	
 SELECT 
     e1.emp_name, e2.emp_name AS manager_name
 FROM
     employee AS e1
         JOIN
     employee AS e2 ON e1.manager_id = e2.emp_id;
-
+```
+	
 </details>
 <br>
 
@@ -780,11 +785,13 @@ FROM
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
     orders;
-
+```
+```sql	
 SELECT 
     o.sub_category
 FROM
@@ -795,7 +802,8 @@ WHERE
     MONTH(o.order_Date) = '11'
 GROUP BY o.sub_category
 HAVING COUNT(r.order_id) = 0;
-
+```
+	
 </details>
 <br>
 
@@ -804,17 +812,20 @@ HAVING COUNT(r.order_id) = 0;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql	
 SELECT 
     *
 FROM
     orders;
-    
+```
+```sql	
 SELECT 
     order_id
 FROM
     orders
 GROUP BY order_id
 HAVING COUNT(order_id) = 1;
+```
 </details>
 <br>
 
@@ -823,9 +834,12 @@ HAVING COUNT(order_id) = 1;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
+```sql	
 select * from employee;
 select * from dept;
-
+```
+```sql	
 SELECT 
     e2.emp_name AS manager_name,
     GROUP_CONCAT(e1.emp_name
@@ -836,7 +850,8 @@ FROM
         INNER JOIN
     employee AS e2 ON e1.manager_id = e2.emp_id
 GROUP BY e2.emp_name;
-
+```
+	
 </details>
 <br>
 
@@ -845,11 +860,13 @@ GROUP BY e2.emp_name;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql
 SELECT 
     DATEDIFF(ship_date, order_date) - FLOOR(DATEDIFF(ship_date, order_date) / 7) * 2 AS business_days
 FROM
     orders;
-
+```
+	
 </details>
 <br>
 
@@ -858,15 +875,19 @@ FROM
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql	
 SELECT 
     *
 FROM
     orders;
+```
+```sql
 SELECT 
     *
 FROM
     returns;
-
+```
+```sql
 SELECT 
     o.category,
     SUM(o.sales) AS total_sales,
@@ -878,7 +899,8 @@ FROM
         LEFT JOIN
     returns r ON o.order_id = r.order_id
 GROUP BY category
-
+```
+	
 </details>
 <br>
 
@@ -887,6 +909,7 @@ GROUP BY category
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql	
 SELECT 
     category,
     SUM(CASE
@@ -898,7 +921,8 @@ SELECT
 FROM
     orders
 GROUP BY category;
-
+```
+	
 </details>
 <br>
 
@@ -907,7 +931,7 @@ GROUP BY category;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-
+```sql
 SELECT 
     city, region, avg(DATEDIFF(ship_date, order_date)) as avg_days
 FROM
@@ -916,7 +940,7 @@ WHERE
     region = 'West'
 GROUP BY city
 LIMIT 5; 
-
+```
 </details>
 <br>
 
@@ -925,11 +949,14 @@ LIMIT 5;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql	
 SELECT 
     *
 FROM
     employee;
-
+```
+```sql	
 SELECT 
     e1.emp_name,
     e2.emp_name AS manager_name,
@@ -940,7 +967,8 @@ FROM
     employee AS e2 ON e1.manager_id = e2.emp_id
         INNER JOIN
     employee AS e3 ON e2.manager_id = e3.emp_id
-
+```
+	
 </details>
 <br>
 

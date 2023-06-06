@@ -271,14 +271,16 @@ GROUP BY category;
 <details><summary>
 :arrow_forward: View Answer
 </summary>  
-  
+
+```sql	
 SELECT 
     sub_category
 FROM
     orders
 GROUP BY sub_category
 HAVING AVG(profit) > MAX(profit) / 2;
-  
+```
+	
 </details>
 <br>
 
@@ -287,7 +289,8 @@ HAVING AVG(profit) > MAX(profit) / 2;
 <details><summary>
 :arrow_forward: View Answer
 </summary> 
-  
+
+```sql	
 CREATE TABLE exams (
     student_id INT,
     subject VARCHAR(20),
@@ -300,7 +303,9 @@ INSERT INTO exams VALUES
 ,(3,'Chemistry',80),(3,'Maths',80)
 ,(4,'Chemistry',71),(4,'Physics',54)
 ,(5,'Chemistry',79);
+```	
 
+```sql	
 SELECT 
     *
 FROM
@@ -314,7 +319,9 @@ WHERE
     subject IN ('Physics' , 'Chemistry')
 GROUP BY student_id , marks
 HAVING COUNT(*) = 2;
+```	
 
+```sql	
 SELECT 
     student_id,
     COUNT(*) AS total_records,
@@ -326,7 +333,7 @@ WHERE
 GROUP BY student_id
 HAVING COUNT(*) = 2
     AND COUNT(DISTINCT marks) = 1;
-
+```
 </details>
 <br>
 

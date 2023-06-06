@@ -413,7 +413,7 @@ WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2021'
 GROUP BY region , ship_mode
 ORDER BY region , ship_mode;
-```sql	
+```	
   </details>
 <br>
 
@@ -421,11 +421,14 @@ ORDER BY region , ship_mode;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
+```sql	
 SELECT 
     region, SUM(sales) AS total_sales
 FROM
     orders
 GROUP BY region; 
+```	
     </details>
 <br>
 
@@ -435,6 +438,7 @@ GROUP BY region;
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
@@ -444,7 +448,8 @@ SELECT
     *
 FROM
     returns;
-
+```
+```sql	
 SELECT 
     o.region, COUNT(DISTINCT o.order_id) AS no_of_items_returned
 FROM
@@ -452,6 +457,7 @@ FROM
         INNER JOIN
     returns AS r ON o.order_id = r.order_id
 GROUP BY o.region;
+```	
 </details>
 <br>
 

@@ -990,6 +990,10 @@ FROM
 
 ### 41. Create this table and Execute the Question 
 
+<details><summary>
+:arrow_forward: View Answer
+</summary>
+	
 ```sql
 	
 create table icc_world_cup
@@ -1008,10 +1012,6 @@ INSERT INTO icc_world_cup values('Aus','India','India');</b>
 ```
 	
 ### write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. :question:
-
-<details><summary>
-:arrow_forward: View Answer
-</summary>
 
 ```sql
 	

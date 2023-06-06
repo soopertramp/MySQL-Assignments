@@ -121,13 +121,17 @@ WHERE
 :arrow_forward: View Answer
 </summary>  
 
+```sql
+	
 SELECT 
     *
 FROM
     orders
 WHERE
     quantity < 3 OR profit = 0;
-                
+
+```
+		
 </details>
 <br>
   

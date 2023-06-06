@@ -404,6 +404,7 @@ LIMIT 5;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql	
 SELECT 
     region, ship_mode, SUM(sales) AS total_sales
@@ -412,9 +413,9 @@ FROM
 WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2021'
 GROUP BY region , ship_mode
-ORDER BY region , ship_mode;
+ORDER BY region , ship_mode;	
 ```	
-  </details>
+</details>
 <br>
 
 ### 20. Write a query to find total sales for each region :question:
@@ -428,8 +429,9 @@ SELECT
 FROM
     orders
 GROUP BY region; 
+	
 ```	
-    </details>
+</details>
 <br>
 
 ### 21. write a query to get region wise count of return orders :question:

@@ -340,7 +340,9 @@ HAVING COUNT(*) = 2
 ### 16. Write a query to findout the all the students marks in chemistry subject? :question:
 <details><summary>
 :arrow_forward: View Answer
-</summary> 
+</summary>
+
+```sql
 SELECT 
     student_id, subject, marks
 FROM
@@ -348,7 +350,7 @@ FROM
 WHERE
     subject = 'Chemistry'
 GROUP BY student_id, marks;
-  
+```  
 </details>
 <br>
 
@@ -356,6 +358,7 @@ GROUP BY student_id, marks;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+```sql	
 select * from orders;
 
 SELECT 
@@ -369,6 +372,7 @@ SELECT
 FROM
     orders
 GROUP BY category;
+```	
  </details>
 <br>
 

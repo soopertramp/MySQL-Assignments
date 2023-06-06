@@ -55,10 +55,9 @@ FROM
     orders
 WHERE
     order_Date BETWEEN '01-12-2020' AND '31-12-2020';
-  
+```  
 </details>
 <br>
-```
 	
 ### 3. write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020:question:
 
@@ -94,7 +93,7 @@ WHERE
     customer_name NOT LIKE 'A%n'
 ```
 	
-  </details>
+</details>
 <br>
   
 ### 5. write a query to get all the orders where profit is negative:question:
@@ -121,8 +120,7 @@ WHERE
 :arrow_forward: View Answer
 </summary>  
 
-```sql
-	
+```sql	
 SELECT 
     *
 FROM
@@ -140,14 +138,16 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+
+```sql	
 SELECT 
     *
 FROM
     orders
 WHERE
     region = 'South' AND discount > 0; 
-  
+```
+	
 </details>
 <br>
   
@@ -156,7 +156,8 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>  
- 
+
+```sql	
 SELECT 
     *
 FROM
@@ -165,7 +166,7 @@ WHERE
     category = 'Furniture'
 order by sales desc
 LIMIT 5;
- 
+``` 
 </details>
 <br>
   
@@ -175,6 +176,7 @@ LIMIT 5;
 :arrow_forward: View Answer
 </summary>  
 
+```sql	
 SELECT 
     *
 FROM
@@ -182,7 +184,7 @@ FROM
 WHERE
     category IN ('Technology' , 'Furniture')
         AND order_date BETWEEN '01-01-2020' AND '31-12-2020';
-
+```
 </details>
 <br>
   
@@ -191,7 +193,8 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+ 
+```sql	
 SELECT 
     *
 FROM
@@ -199,7 +202,7 @@ FROM
 WHERE
     order_Date BETWEEN '01-01-2020' AND '31-12-2020'
         AND ship_date > '01-01-2021';
-  
+```  
 
 </details>
 <br>
@@ -210,6 +213,7 @@ WHERE
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
@@ -220,7 +224,8 @@ SET
     city = NULL
 WHERE
     order_id IN ('CA-2020-161389' , 'US-2021-156909');
-    
+```
+	
 </details>
 <br>
 
@@ -229,14 +234,16 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>  
-  
+
+```sql	
 SELECT 
     *
 FROM
     orders
 WHERE
     city IS NULL; 
-
+```
+	
 </details>
 <br>
 
@@ -245,7 +252,8 @@ WHERE
 <details><summary>
 :arrow_forward: View Answer
 </summary>
-  
+
+```sql	
 SELECT 
     category,
     SUM(profit) AS profit,
@@ -254,6 +262,7 @@ SELECT
 FROM
     orders
 GROUP BY category;
+```	
 </details>
 <br>
 

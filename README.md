@@ -864,11 +864,13 @@ GROUP BY e2.emp_name;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql
 SELECT 
     DATEDIFF(ship_date, order_date) - FLOOR(DATEDIFF(ship_date, order_date) / 7) * 2 AS business_days
 FROM
     orders;
+	
 ```
 	
 </details>
@@ -879,18 +881,21 @@ FROM
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql	
 SELECT 
     *
 FROM
     orders;
 ```
+	
 ```sql
 SELECT 
     *
 FROM
     returns;
 ```
+	
 ```sql
 SELECT 
     o.category,
@@ -903,6 +908,7 @@ FROM
         LEFT JOIN
     returns r ON o.order_id = r.order_id
 GROUP BY category
+	
 ```
 	
 </details>
@@ -913,6 +919,7 @@ GROUP BY category
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql	
 SELECT 
     category,
@@ -925,6 +932,7 @@ SELECT
 FROM
     orders
 GROUP BY category;
+	
 ```
 	
 </details>
@@ -935,6 +943,7 @@ GROUP BY category;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql
 SELECT 
     city, region, avg(DATEDIFF(ship_date, order_date)) as avg_days
@@ -944,6 +953,7 @@ WHERE
     region = 'West'
 GROUP BY city
 LIMIT 5; 
+	
 ```
 </details>
 <br>
@@ -955,11 +965,13 @@ LIMIT 5;
 </summary>
 
 ```sql	
+	
 SELECT 
     *
 FROM
     employee;
 ```
+	
 ```sql	
 SELECT 
     e1.emp_name,

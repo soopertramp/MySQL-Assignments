@@ -1152,6 +1152,8 @@ FROM
 
 <b>example output - hierarchy type,hierarchy name ,total_sales_in_west_region, total_sales_in_east_region
 
+Example   |	|
+----------|------|	
 |category | Technology|
 |category|Furniture|
 |category|Office Supplies|

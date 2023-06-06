@@ -642,16 +642,22 @@ HAVING COUNT(r.return_reason) = 0;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql	
 SELECT 
     *
 FROM
     orders;
-    
+```
+	
+```sql	
 SELECT 
     *
 FROM
     returns;
-
+```
+	
+```sql	
 SELECT 
     o.sub_category, SUM(o.sales) AS total_return_sales
 FROM
@@ -663,7 +669,8 @@ WHERE
 GROUP BY o.sub_category
 ORDER BY total_return_sales DESC
 LIMIT 3;
-
+```
+	
 </details>
 <br>
 
@@ -673,15 +680,21 @@ LIMIT 3;
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
     employee;
+```	
+
+```sql
 SELECT 
     *
 FROM
     dept;
+```
 
+```sql
 SELECT 
     d.dep_id, d.dep_name
 FROM
@@ -690,6 +703,8 @@ FROM
     employee AS e ON d.dep_id = e.dept_id
 GROUP BY d.dep_id
 HAVING COUNT(e.emp_id) = 0; 
+```
+	
 </details>
 <br>
 
@@ -699,15 +714,19 @@ HAVING COUNT(e.emp_id) = 0;
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
     employee;
+```	
+```sql	
 SELECT 
     *
 FROM
     dept;
-
+```
+```sql	
 SELECT 
     e.emp_id, e.emp_name
 FROM
@@ -716,7 +735,8 @@ FROM
     dept AS d ON e.dept_id = d.dep_id
 WHERE
     d.dep_id IS NULL;
-
+```
+```sql	
 -- SELECT 
 --     e.emp_id, e.emp_name
 -- FROM
@@ -725,6 +745,7 @@ WHERE
 --     dept AS d ON e.dept_id = d.dep_id
 -- GROUP BY e.emp_id
 -- HAVING COUNT(d.dep_id) = 0
+```
 </details>
 <br>
 

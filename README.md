@@ -469,6 +469,8 @@ GROUP BY o.region;
 :arrow_forward: View Answer
 </summary>
 
+```sql
+	
 SELECT 
     o.category,
     sum(o.sales) as total_sales
@@ -479,7 +481,10 @@ FROM
 WHERE
     o.order_id != r.order_id
 GROUP BY o.category;
-
+```
+	
+```sql
+	
 SELECT 
     o.category, SUM(o.sales) AS total_sales
 FROM
@@ -489,7 +494,8 @@ FROM
 WHERE
     o.order_id IS NULL
 GROUP BY o.category;
-
+```
+	
 </details>
 <br>
 
@@ -499,9 +505,12 @@ GROUP BY o.category;
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 select * from employee;
 select * from dept;
+```	
 
+```sql	
 SELECT 
     d.dep_name, AVG(salary) AS salary
 FROM
@@ -509,7 +518,8 @@ FROM
         INNER JOIN
     employee AS e ON d.dep_id = e.dept_id
 GROUP BY d.dep_name;
-
+```
+	
 </details>
 <br>
 

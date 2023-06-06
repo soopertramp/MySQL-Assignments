@@ -812,12 +812,14 @@ HAVING COUNT(r.order_id) = 0;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+	
 ```sql	
 SELECT 
     *
 FROM
     orders;
 ```
+	
 ```sql	
 SELECT 
     order_id
@@ -825,7 +827,9 @@ FROM
     orders
 GROUP BY order_id
 HAVING COUNT(order_id) = 1;
+	
 ```
+	
 </details>
 <br>
 

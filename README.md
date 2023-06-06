@@ -529,16 +529,21 @@ GROUP BY d.dep_name;
 :arrow_forward: View Answer
 </summary>
 
+```sql	
 SELECT 
     *
 FROM
     employee;
-    
+```
+	
+```sql	
 SELECT 
     *
 FROM
     dept;
+```	
 
+```sql	
 SELECT 
     e.dept_id, d.dep_name
 FROM
@@ -547,7 +552,8 @@ FROM
     dept d ON e.dept_id = d.dep_id
 GROUP BY e.dept_id , d.dep_name
 HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
-
+```
+	
 </details>
 <br>
 
@@ -556,16 +562,22 @@ HAVING COUNT(e.emp_id) = COUNT(DISTINCT e.salary)
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql	
 SELECT 
     *
 FROM
     orders;
-    
+```
+	
+```sql    
 SELECT 
     *
 FROM
     returns;
+```
 
+```sql	
 SELECT 
     o.sub_category, COUNT(DISTINCT r.return_reason) as return_reason
 FROM
@@ -575,7 +587,8 @@ FROM
 GROUP BY o.sub_category
 HAVING COUNT(DISTINCT r.return_reason) = 3
 ORDER BY o.sub_category;
-
+```
+	
 </details>
 <br>
 
@@ -584,16 +597,22 @@ ORDER BY o.sub_category;
 <details><summary>
 :arrow_forward: View Answer
 </summary>
+
+```sql	
 SELECT 
     *
 FROM
     orders;
-    
+```
+	
+```sql	
 SELECT 
     *
 FROM
     returns;
-
+```
+	
+```sql	
 SELECT 
     o.order_id, o.city
 FROM
@@ -602,7 +621,9 @@ FROM
     returns AS r ON o.order_id = r.order_id
 GROUP BY city
 HAVING COUNT(r.order_id) = 0;
+```
 
+```sql	
 SELECT 
     o.order_id,o.city
 FROM
@@ -611,7 +632,8 @@ FROM
     returns AS r ON o.order_id = r.order_id
 GROUP BY city
 HAVING COUNT(r.return_reason) = 0;
-
+```
+	
 </details>
 <br>
 

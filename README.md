@@ -990,7 +990,9 @@ FROM
 
 ### 41. Create this table and Execute the Question 
 
-<b>create table icc_world_cup
+```sql
+	
+create table icc_world_cup
 (
 Team_1 Varchar(20),
 Team_2 Varchar(20),
@@ -1001,16 +1003,22 @@ INSERT INTO icc_world_cup values('India','SL','India');
 INSERT INTO icc_world_cup values('SL','Aus','Aus');
 INSERT INTO icc_world_cup values('SA','Eng','Eng');
 INSERT INTO icc_world_cup values('Eng','NZ','NZ');
-  INSERT INTO icc_world_cup values('Aus','India','India');</b>
-  
+INSERT INTO icc_world_cup values('Aus','India','India');</b>
+
+```
+	
 ### write a query to produce team_name, no_of_matches_played , no_of_wins , no_of_losses this output from icc_world_cup table. :question:
 
 <details><summary>
 :arrow_forward: View Answer
 </summary>
 
+```sql
+	
 select * from icc_world_cup;
+```	
 
+```sql	
 WITH all_teams AS (
   SELECT 
     Team_1 AS team, 
@@ -1029,6 +1037,7 @@ SELECT
   COUNT(*) - SUM(win_flag) AS matches_lost
 FROM all_teams
 GROUP BY team;
+```	
 
 </details>
 <br>
